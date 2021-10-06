@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<style>
+    textarea {
+        margin-top: 100px;
+        margin-left: 700px;
+        resize: none;
+        height: 180px;
+    }
+
+    .btn-info {
+        margin-top: 300px;
+    }
+
+    .msg {
+        margin-left: 700px;
+    }
+</style>
+<body>
+ 
+	<header>
+		<div class="container">
+            <div id="brandname">
+                <a href="/"><strong>Machine Learning App with Flask</strong></a>
+                <p class="msg">Enter Your Message Below</p>
+            </div>
+	    </div>
+	</header>
+ 
+	<div class="ml-container">
+ 
+        <form action="{{ url_for('predict')}}" method="POST" style="display: flex;">
+            <!-- <input type="text" name="comment"/> -->
+            <textarea name="message" rows="4" cols="50"></textarea>
+            <br/>
+    
+            <input type="submit" class="btn-info" value="predict">
+	    </form>
+		
+	</div>
+</body>
+</html>
